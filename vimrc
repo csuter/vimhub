@@ -1,3 +1,5 @@
+call pathogen#infect()
+
 syntax on
 set background=dark
 
