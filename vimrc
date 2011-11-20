@@ -149,15 +149,3 @@ omap s :normal vs
 nmap  :nohl<CR>
 
 set ttymouse=xterm2
-au VimEnter * call MyInit()
-
-function! MyInit()
-    if &filetype != "gitcommit" && &filetype != "todo"
-        NERDTree
-        if (argc() > 0)
-            execute 'normal l'
-        endif
-    else
-        normal gg 
-    endif
-endfunction
