@@ -1,5 +1,9 @@
 call pathogen#infect()
 
+if filereadable(glob("~/.vimlocal/vimrc"))
+    so ~/.vimlocal/vimrc
+endif
+
 syntax on
 set background=dark
 
@@ -71,8 +75,8 @@ let g:treeExplNoList=0
 "let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 
 set number
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set expandtab
 
 au! BufRead,BufNewFile *.py setlocal noexpandtab
@@ -84,9 +88,9 @@ vnoremap > >gv
 vnoremap < <gv
 
 " put q register in newline at eof
-noremap qp Go"qp
+noremap qp maGo"qp
 " delete last line back into q register
-noremap qd G0"qd$dd:w
+noremap qd G0"qd$dd:w`a
 
 " fuck some <F1> help
 nmap <F1> 
@@ -102,7 +106,6 @@ nmap Q A
 " I do these aaalllll the time...
 abb String String
 abb pacakge package
-abb sahrk shark
 abb serviec service
 
 " quick vimgrep on current word
@@ -121,6 +124,9 @@ nnoremap <C-w>p "+p
 vnoremap <C-w>p "+p
 nnoremap <C-w>P "+P
 vnoremap <C-w>P "+P
+
+let mapleader = ","
+nnoremap <Leader>n :NERDTree<CR>
 
 filetype plugin indent on
 let clj_highlight_builtins=1
