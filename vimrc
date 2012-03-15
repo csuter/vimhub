@@ -80,6 +80,7 @@ set tabstop=2
 set expandtab
 
 au! BufRead,BufNewFile *.py setlocal noexpandtab
+au! BufRead,BufNewFile .vimrc map <F5> :so %<CR>
 
 map <F12> :source ~/.vimrc<CR>
 
@@ -92,7 +93,7 @@ noremap qp maGo"qp
 " delete last line back into q register
 noremap qd G0"qd$dd:w`a
 
-" fuck some <F1> help
+" No F1 help plz
 nmap <F1> 
 imap <F1> 
 
@@ -155,3 +156,16 @@ omap s :normal vs
 nmap  :nohl<CR>
 
 set ttymouse=xterm2
+set t_Co=256
+
+" get rid of annoying weirdness when i forget to move focus to browser before
+" changing tabs...
+noremap [5;5~ <ESC>
+noremap [6;5~ <ESC>
+
+colorscheme cgs
+
+nmap <leader>cn :cn<CR>
+nmap <leader>cp :cp<CR>
+nmap <leader>co :cope<CR>
+nmap <leader>cc :cclose<CR>
