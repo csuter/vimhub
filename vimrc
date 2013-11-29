@@ -43,6 +43,13 @@ set autoindent
 set smartindent
 set hlsearch
 
+au! BufRead,BufNewFile *.py setlocal noexpandtab
+au! BufRead,BufNewFile .vimrc map <F5> :so %<CR>
+
+map <F12> :source ~/.vimrc<CR>
+
+>>>>>>> 413693aa7178a99afcfaaacd9e6e39ad7a008f98
+
 vnoremap > >gv
 vnoremap < <gv
 
